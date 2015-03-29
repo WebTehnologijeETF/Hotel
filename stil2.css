@@ -1,0 +1,430 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+body{
+	/*background-image: url('http://1.bp.blogspot.com/-Xk61nlTH-58/UEERCJg22PI/AAAAAAAAOOM/AnJ0qlkYul4/s1600/DSC02030.JPG'); */
+background-color: #FFD280;
+background-position:center;   
+background-repeat: no-repeat;
+background-attachment: fixed;
+ overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#zaglavlje{
+background-color: black;
+background-image:url('Untitled1.jpg');
+background-repeat: no-repeat;
+background-position: center;
+height:125px;
+margin-left:-10%;
+margin-right: -10%;
+background-position: top -11px center;
+
+}
+
+h1 {
+
+text-align: center;
+color: #FF8C00;
+font-size: 35px;
+margin-top:-10px;
+font-family: Montserrat ;
+position: relative;
+bottom:10px;
+
+
+
+
+
+
+}
+.logo{
+
+margin-right:-250px;
+margin-bottom:20px;
+} 
+.slika
+{
+	position:relative;
+left:200px;
+margin-top: -25px;
+z-index:-1;
+
+}
+
+#meni li {
+	display: inline;
+	/*background-color:#1A0E00; */
+	background-color: black;
+	
+    font-size: 20px;
+    position: relative;
+    /*  border:1px solid #FFC966; */
+    padding:5px;
+    left:33%;
+    width: 100px;
+   }
+li{ width: 100px;
+          
+    }
+   
+    a {
+    text-decoration: none;
+    color:#FF8C00; /* tamno zuta*/
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+}
+
+a:hover {
+    background-color: white;
+}
+h2 {
+  color:#FF8C00;
+  text-align: center;
+  margin-left: 10%;
+
+}
+
+h3 {
+font-size:10px;
+color:#FFD280; /*boja svijetlo zuta*/
+
+margin-left:40%;
+
+}
+
+.sn{
+
+height:32%;
+width:24%;
+
+
+
+}
+
+
+
+
+#novosti1 {
+
+background-color: black;
+width:60%;
+height: 35%;
+margin-left: 20%;
+margin-bottom: -44%;
+background-image: url('bazen.jpg');
+background-repeat: no-repeat;
+
+/*background-position: left 45%;
+background-position: bottom 10%; */
+background-position: left 10px center;
+
+padding:3px;
+
+
+
+}
+
+#novosti2 {
+background-color: black;
+width:60%;
+height: 35%;
+margin-left: 20%;
+padding-top: 4px;
+
+background-image:url('kafa.jpg');
+background-position: left 10px center;
+background-repeat: no-repeat;
+
+}
+
+
+.tekst1 
+{color:white;
+text-align: left;
+margin-left:25%;
+font-size: 16px;
+
+
+
+}
+
+.tekst2 {
+color:white;
+text-align: left;
+margin-left:26%;
+
+
+}
+
+.vise {text-decoration: underline;
+color:#FF8C00;
+font-style: italic; }
+
+.tabela {
+
+width:70%;
+background-color: black;
+
+text-align: center;
+
+
+}
+th {border:1px outset white ;
+  padding: 2px;
+
+}
+
+
+.tabela, td {border:1px groove white; 
+border-collapse: collapse; 
+padding:2px;}
+
+
+caption {
+color:#FF8C00;
+background-color: black;
+margin-bottom: 5px;
+width:200px;
+text-align: center;
+font-size: 20px;
+margin-left: 37%;
+
+
+
+}
+
+th {
+color:#FF8C00;
+
+
+
+
+}
+
+td {
+color:#FFD280;
+
+
+}
+
+#kontakt {
+background-color: #ECE3DA;
+width:420px;
+
+margin-top: 5%;
+color: #FF8C00 ;
+margin-left:50%;
+padding-left: 20px;
+padding-top:10px;
+padding-bottom: 12px;
+padding-right: 20px;
+padding-bottom: 10px;
+padding-top: 12px;
+
+
+}
+
+ label{
+  display:block;
+  padding-top : 10px;
+  padding-bottom: 10px;
+
+
+
+}
+#email {margin-left:18%;}
+
+
+
+
+
+
+
+
+
+
+ #okvirforme #posalji {
+  display:block;
+  width:50px;
+position: relative;
+
+ }
+
+
+
+
+
+#email { 
+  display: block;
+  margin-left:0%;
+
+  }
+
+#poruka {
+
+ line-height: 40px;
+ margin-bottom: 10%;
+
+
+
+}
+#posalji {
+  display:block;
+position: relative;
+margin-bottom: 5%;
+margin-left: 74%;
+;}
+
+#brojevi {color:white;
+  list-style: none;
+}
+#brojevi li{
+width:200px;
+
+
+}
+
+#kontaktinfo {
+
+width:30%;
+height:40%;
+
+background-color: black;
+
+margin-top: -33%;
+/*margin-top: -31%;*/
+/*margin-right:10%; */
+padding-left: 10px;
+margin-left: 10%;
+
+
+}
+
+#direktor {
+
+margin-left:10px;
+float: left;
+/*padding-left: 10px;*/
+padding-top: 17px;
+padding-right: 5px;
+padding-bottom: 5px;
+}
+
+.tekstinfo {
+
+color:white;
+text-align: left;
+padding:10px;
+
+
+
+}
+
+
+h4 {
+padding-top: 1px;
+color:#FFD280;
+
+}
+
+.odirektoru {
+color:white;
+
+
+
+
+}
+#brojevi  {
+
+font-size: 14px;
+
+}
+
+#restoran {
+ padding-left: 70px;
+ padding-bottom: 20px;
+ padding-top: 24px;
+
+background-color: black;
+margin-bottom: 3%;
+
+
+
+}
+
+#opisrestorana {
+
+background-color: black;
+color:white;
+width:35%;
+height:24%;
+padding:10px;
+
+margin-left:10%;
+font-style: italic
+}
+
+#stranice {
+
+  padding: 10px;
+float:right;
+background-color: black;
+color:white;
+margin-top: -12.8%;
+margin-right:10%;
+width:35%;
+height:24%;
+} 
+
+#partneri {list-style-image: url('bullet1.gif');
+
+} 
+
+#partneri a {
+text-align:left;
+color:#FF8C00;
+
+
+}
+
+#dobrodosli {
+
+background-color: black;
+padding-left: 10px;
+padding-top: 25px;
+padding-left:50px;
+padding-bottom: 25px;
+margin-bottom: 35%;
+
+}
+
+
+
+.sobe {
+background-color: black;
+display: block;
+width:20%;
+height:40%;
+float:right;
+position: relative;
+top:-50%;
+right:5%;
+
+
+
+
+}
+
+.slikesoba {
+
+float:right;
+
+
+}
+.rs {
+
+width:20%;
+height:32%;
+
+}
