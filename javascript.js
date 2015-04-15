@@ -5,7 +5,7 @@ function otvorisubmeni(num) {
 
 element = document.getElementById(num);
 if(element.style.visibility=="visible" ) 
- element.style.visibility="hidden"	; 
+ element.style.visibility="hidden"  ; 
  
 else  if(element.style.visibility=="hidden" || element.style.visibility=="")
 
@@ -21,15 +21,6 @@ function zatvorielement()
 
 }
 
-function PerformClose()
-{
-  // If the item is still open.
-  if (element)
-  {
-   // Close it.
-   element.style.visibility = "hidden";
-  }   
-   }
 
   function drzisubmeni()
 {
@@ -204,7 +195,7 @@ if (document.getElementById("drzave").value=="Hrvatska")
     opcija.text= "Zagreb";
     a.add(opcija);
     var opcija2=document.createElement("option");
-    opcija2.text="Dubrovnik";
+    opcija2.text="Split";
     a.add(opcija2);
      var opcija3=document.createElement("option");
     opcija3.text="Dubrovnik";
@@ -325,9 +316,10 @@ document.getElementById("greska").style.visibility = "hidden";
 function provjeri() {
 if (document.getElementById("error1").style.visibility=="visible" || document.getElementById("error2").style.visibility=="visible"
 
-    || document.getElementById("error3").style.visibility=="visible" || document.getElementById("error4").style.visibility=="visible")
+    || document.getElementById("error3").style.visibility=="visible" || document.getElementById("error4").style.visibility=="visible") {
  alert("Morate unijeti validne podatke") ;
-
+return false;
+ }
 
 
 }
