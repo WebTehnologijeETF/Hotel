@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 body{
-	/*background-image: url('http://1.bp.blogspot.com/-Xk61nlTH-58/UEERCJg22PI/AAAAAAAAOOM/AnJ0qlkYul4/s1600/DSC02030.JPG'); */
+  /*background-image: url('http://1.bp.blogspot.com/-Xk61nlTH-58/UEERCJg22PI/AAAAAAAAOOM/AnJ0qlkYul4/s1600/DSC02030.JPG'); */
 background-color: #FFD280;
 background-position:center;   
 background-repeat: no-repeat;
@@ -44,25 +44,46 @@ margin-bottom:20px;
 } 
 .slika
 {
-	position:relative;
+  position:relative;
 left:200px;
 margin-top: -25px;
 z-index:-1;
 
 }
 
+
+#submeni li a{
+text-align: center;
+
+
+
+
+}
+
+#meni {
+
+padding-bottom: 3px;
+list-style-type: none;
+
+}
 #meni li {
-	display: inline;
-	/*background-color:#1A0E00; */
-	background-color: black;
-	
+  float:left;
+  /*background-color:#1A0E00; */
+  background-color: black;
+  
     font-size: 20px;
     position: relative;
     /*  border:1px solid #FFC966; */
+    margin-right:3px;
     padding:5px;
     left:33%;
     width: 100px;
+  
    }
+
+#meni li ul {   visibility: hidden ;z-index: 100; position: absolute;  right:37%; margin-top:4px; list-style-type: none;} 
+#meni li ul li{ font-size:16px; clear:both; padding: 5%; padding-top: 7%; padding-bottom: 7%; }
+
 li{ width: 100px;
           
     }
@@ -75,9 +96,9 @@ li{ width: 100px;
     width: 100px;
 }
 
-a:hover {
+/*#meni li :hover {
     background-color: white;
-}
+} */
 h2 {
   color:#FF8C00;
   text-align: center;
@@ -233,7 +254,10 @@ padding-top: 12px;
 
 
 }
-#email {margin-left:18%;}
+#email {margin-left:18%;
+margin-bottom: -6%;
+
+}
 
 
 
@@ -246,7 +270,8 @@ padding-top: 12px;
 
  #okvirforme #posalji {
   display:block;
-  width:50px;
+  width:70px;
+
 position: relative;
 
  }
@@ -285,6 +310,7 @@ width:200px;
 
 }
 
+
 #kontaktinfo {
 
 width:30%;
@@ -292,7 +318,7 @@ height:40%;
 
 background-color: black;
 
-margin-top: -33%;
+margin-top: -40%;
 /*margin-top: -31%;*/
 /*margin-right:10%; */
 padding-left: 10px;
@@ -426,5 +452,59 @@ float:right;
 
 width:20%;
 height:32%;
+
+}
+
+#error1{
+
+width:6%; 
+height:6%;
+
+visibility: hidden;
+margin-bottom: -2%;
+
+}
+
+
+#error2 {
+width:6%; 
+height:6%;
+
+margin-left:93%;
+visibility: hidden;
+
+
+}
+
+#error3
+{
+width:6%; 
+height:6%;
+float:right;
+
+visibility: hidden;
+
+}
+
+#drzave , #gradovi {
+
+
+width:50% ;
+
+
+}
+
+#error4{
+width:6%; 
+height:6%;
+visibility: hidden;
+
+
+
+}
+
+
+#greska {
+visibility: hidden;
 
 }

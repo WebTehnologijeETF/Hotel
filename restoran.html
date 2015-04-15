@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<script src="javascript.js"></script>
 <link rel="stylesheet" type="text/css" href="stil2.css">
 <TITLE>Double Infinity Hotel</TITLE>
 </HEAD>
@@ -16,14 +16,21 @@
 
 </div>
 
-   <div id="meni">
-		<ul>
-		<li><a href="naslovnica.html">Naslovnica</a></li>
-		<li><a href="sobe.html">Sobe</a></li>
-		<li><a href="restoran.html">Restoran </a></li>
-		<li><a href="kontakt.html">Kontakt </a></li>
-		</ul>
+  <div id="meni">
+    <ul>
+    <li><a href="naslovnica.html">Naslovnica</a></li>
+    <li><a href="sobe.html">Sobe</a></li>
+    <li><a  onclick="otvorisubmeni('submeni')"  >Restoran</a>
+          <ul id="submeni" >
+            <li id="stavka1" onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Ponude</a></li>
+          <li id="stavka2" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Događaji </a></li>
+          <li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+        </ul>
 
+    </li>
+    <li><a href="kontakt.html">Kontakt </a></li>
+    </ul>
+        <br><br> <br>
 
    </div>
    
@@ -36,16 +43,16 @@
    
    </div>
 <div id="opisrestorana">
-	<p>Spoj elegancije, luksuza i jednostavnosti.U ovom prekrasnom ambijentu uživajte uz ukusnu hranu i raznovrsne deserte.Izaberite ono što je baš po Vašem ukusu.Odmah uz restoran se nalazi i šarmantni bar, sa svojim mnogobrojnim  specijalitetima.Uz sve to, pogled na vrt s bazenom će vas osvojiti.Uvjerite se sami! </p>
+  <p>Spoj elegancije, luksuza i jednostavnosti.U ovom prekrasnom ambijentu uživajte uz ukusnu hranu i raznovrsne deserte.Izaberite ono što je baš po Vašem ukusu.Odmah uz restoran se nalazi i šarmantni bar, sa svojim mnogobrojnim  specijalitetima.Uz sve to, pogled na vrt s bazenom će vas osvojiti.Uvjerite se sami! </p>
 
 </div>
 
 <div id="stranice"><p>Naša svakodnevna dešavanja,  fotografije,te utiske ljudi možete pratiti putem:  </p>
      
     <ul id="partneri">
-    	<li><a href="http://Facebook.com">Facebook</a></li>
-    	<li><a href="http://Twitter.com">Twitter</a></li>
-    	<li><a href="http://Klix.ba">Klix</a></li>
+      <li><a href="http://Facebook.com">Facebook</a></li>
+      <li><a href="http://Twitter.com">Twitter</a></li>
+      <li><a href="http://Klix.ba">Klix</a></li>
 
 
     </ul>
