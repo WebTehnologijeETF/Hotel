@@ -201,7 +201,21 @@ th {border:1px outset white ;
 border-collapse: collapse; 
 padding:2px;}
 
+.tabela {
 
+margin-bottom: -20%;
+
+
+}
+
+#tabela1{
+
+background-color: black;
+border:1px groove white;
+border-collapse: collapse; 
+padding:2px;
+
+}
 caption {
 color:#FF8C00;
 background-color: black;
@@ -503,8 +517,33 @@ visibility: hidden;
 
 }
 
+#error5
+{
+width:6%; 
+height:6%;
+visibility: hidden;
 
+
+}
 #greska {
 visibility: hidden;
 
+}
+
+#dodavanje{
+
+width: 20%;
+margin-left: 40%;
+
+}
+
+#brisanje{
+  margin-left: 40%;
+  width:20%;
+  
+}
+
+#izmjena{
+  margin-left: 40%;
+  width:20%;
 }

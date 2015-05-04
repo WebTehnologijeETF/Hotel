@@ -1,6 +1,268 @@
 var element;
 var brojac;
 
+function ucitajtabelu() {
+
+
+var podaci=new XMLHttpRequest();
+podaci.onreadystatechange=function()
+
+
+{
+        if (podaci.readyState == 4 && podaci.status == 200)
+        {   
+          
+            var tekst=JSON.parse(podaci.responseText) ;
+            
+            
+            var tabela=document.getElementById("tabela1") ;
+            while(tabela.rows.length > 1) {
+                  tabela.deleteRow(1);
+
+          }
+            for(var i=0; i<tekst.length; i++)
+            {
+                var red=tabela.insertRow();     
+                var cell1 = red.insertCell(0);
+                var cell2 = red.insertCell(1);
+                var cell3 = red.insertCell(2);
+                var cell4 = red.insertCell(3);
+
+
+               cell1.innerHTML = tekst[i].id;
+               cell2.innerHTML = tekst[i].naziv;
+               cell3.innerHTML = tekst[i].slika;
+               cell4.innerHTML = tekst[i].opis;
+
+              
+
+
+            }
+            
+          
+            
+
+        }
+    }
+
+ 
+podaci.open("GET", "http://zamger.etf.unsa.ba/wt/proizvodi.php?brindexa=16102", true);
+    podaci.send();
+
+}
+
+
+function izmjeniproizvod()
+{
+
+var idd=document.getElementById("idpb").value;
+var nazivv=document.getElementById("nazivb").value ;
+
+var opiss=document.getElementById("opisb").value ;
+
+var slikaa=document.getElementById("pslikab").value ;
+
+var proizvod={id:idd, naziv:nazivv, opis:opiss, slika:slikaa};
+
+var objekt= new XMLHttpRequest();
+    objekt.onreadystatechange = function(event) {
+        if (objekt.readyState == 4 && objekt.status == 200)
+        {
+            event.preventDefault();
+        }
+    }
+    objekt.open("POST", "http://zamger.etf.unsa.ba/wt/proizvodi.php?brindexa=16102", true);
+    objekt.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   objekt.send("akcija=promjena&proizvod=" + JSON.stringify(proizvod)); 
+
+
+
+
+}
+
+
+
+function dodajproizvod()
+{
+  
+var nazivv=document.getElementById("naziv").value ;
+
+var opiss=document.getElementById("opis").value ;
+
+var slikaa=document.getElementById("pslika").value ;
+
+
+
+var proizvod={naziv:nazivv, opis:opiss, slika:slikaa};
+
+var objekt= new XMLHttpRequest();
+    objekt.onreadystatechange = function(event) {
+        if (objekt.readyState == 4 && objekt.status == 200)
+        {
+            event.preventDefault();
+        }
+    }
+    objekt.open("POST", "http://zamger.etf.unsa.ba/wt/proizvodi.php?brindexa=16102", true);
+    objekt.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   objekt.send("akcija=dodavanje&proizvod=" + JSON.stringify(proizvod)); 
+
+
+
+}
+
+function izbrisiproizvod()
+{
+
+var idd = document.getElementById("idp").value;
+  
+  var proizvod = {
+        id: idd
+    }; 
+
+var objekt= new XMLHttpRequest();
+    objekt.onreadystatechange = function(event) {
+        if (objekt.readyState == 4 && objekt.status == 200)
+        {
+            event.preventDefault();
+        }
+    }
+
+objekt.open("POST", "http://zamger.etf.unsa.ba/wt/proizvodi.php?brindexa=16102", true);
+    objekt.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   objekt.send("akcija=brisanje&proizvod=" + JSON.stringify(proizvod)); 
+
+
+
+} 
+
+
+
+
+
+
+function provjerigradservis2() {
+
+
+
+var grad1=document.getElementById("grad").value;
+
+var pbroj1=document.getElementById("pbroj").value;
+if(pbroj1!="") {
+
+var ajax = new XMLHttpRequest();
+ajax.onreadystatechange = function()
+{// Anonimna funkcija
+
+if(ajax.readyState == 4 && ajax.status == 200)
+{
+
+if (ajax.responseText == "{"+'"ok"'+":"+'"Poštanski broj odgovara mjestu"'+'}') {
+var paragraf=document.getElementById("greska");
+
+paragraf.style.visibility="hidden";
+var slika=document.getElementById('error5');
+slika.style.visibility="hidden"; 
+}
+else{
+ var paragraf=document.getElementById("greska");
+paragraf.innerHTML="Poštanski broj ne odgovara gradu!"; 
+paragraf.style.visibility="visible";
+var slika=document.getElementById('error5');
+slika.style.visibility="visible"; 
+document.getElementById("grad").focus() ;
+}
+
+
+
+} }
+
+
+ajax.open("GET", "http://zamger.etf.unsa.ba/wt/postanskiBroj.php?mjesto=" + grad1 + "&postanskiBroj=" + pbroj1, true);
+
+
+ ajax.send(); }
+
+ else {
+    var paragraf=document.getElementById("greska");
+
+paragraf.style.visibility="hidden";
+var slika=document.getElementById('error5');
+slika.style.visibility="hidden"; 
+
+
+
+ }
+
+  }
+
+
+
+
+
+function provjerigradservis() {
+
+
+
+var grad1=document.getElementById("grad").value;
+
+var pbroj1=document.getElementById("pbroj").value;
+
+var ajax = new XMLHttpRequest();
+ajax.onreadystatechange = function()
+{// Anonimna funkcija
+
+if(ajax.readyState == 4 && ajax.status == 200)
+{
+
+if (ajax.responseText == "{"+'"ok"'+":"+'"Poštanski broj odgovara mjestu"'+'}') {
+var paragraf=document.getElementById("greska");
+
+paragraf.style.visibility="hidden";
+var slika=document.getElementById('error5');
+slika.style.visibility="hidden"; 
+}
+else{
+ var paragraf=document.getElementById("greska");
+paragraf.innerHTML="Poštanski broj ne odgovara gradu!"; 
+paragraf.style.visibility="visible";
+var slika=document.getElementById('error5');
+slika.style.visibility="visible"; 
+document.getElementById("pbroj").focus() ;
+}
+
+
+
+} }
+
+
+ajax.open("GET", "http://zamger.etf.unsa.ba/wt/postanskiBroj.php?mjesto=" + grad1 + "&postanskiBroj=" + pbroj1, true);
+
+
+ ajax.send();
+
+  }
+
+
+function otvori(stranica)
+{
+  
+  var ajax = new XMLHttpRequest();
+
+  ajax.onreadystatechange=function(){
+    if(ajax.readyState == 4 && ajax.status == 200) {
+      document.open();
+      document.write(ajax.responseText);
+      document.close();
+    }
+  }
+  ajax.open("GET",stranica, true);
+  ajax.send();
+}
+
+
+
+
+
 function otvorisubmeni(num) {
 
 element = document.getElementById(num);
@@ -282,6 +544,8 @@ return false; */
 
 
 function provjeriporuku() {
+
+
  var poruka=document.getElementById("poruka") ;
  
 

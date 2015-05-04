@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="javascript.js"></script>
+
+<link rel="stylesheet" type="text/css" href="stil2.css">
+<TITLE>Double Infinity Hotel</TITLE>
+</HEAD>
+<body>
+<div id="zaglavlje">
+
+<h1>
+<br><br>
+ Double Infinity Hotel
+    </h1>
+ 
+
+</div>
+
+   <div id="meni">
+    <ul>
+    <li><a onclick="otvori('index.html')">Naslovnica</a></li>
+    <li><a onclick="otvori('sobe.html')">Sobe</a></li>
+    <li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
+          <ul id="submeni" onmouseover="drzisubmeni()" >
+            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
+          <li id="stavka2"  onclick="otvori('proizvodi.html')"   onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Događaji </a></li>
+          <li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+        </ul>
+
+    </li>
+    <li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
+    </ul>
+<br><br><br>
+ </div>
+ <table id="tabela1">
+<tr>
+<th>ID</th>
+<th>Naziv</th>
+<th>Slika</th>
+<th>Opis</th>
+</tr>
+ </table>
+ <br>
+ <input type="submit"  onclick="ucitajtabelu()" value="Ucitaj tabelu"/>
+ <div>
+<form id="dodavanje">
+<fieldset>
+<legend>Dodavanje proizvoda</legend>
+<label for ="naziv">Naziv: </label> <input  type="text"  name="naziv" id="naziv" required/> 
+<label for ="opis">Opis: </label> <input  type="text"  name="opis" id="opis" /> 
+<label for ="pslika">Slika: </label> <input type="text" id="pslika"  onchange="provjeriformat()"/>
+<br><br>
+<input type="submit"  onclick="dodajproizvod()" value="Dodaj proizvod"/>
+</fieldset>
+</form>
+<form id="brisanje">
+<fieldset>
+<legend>Brisanje proizvoda</legend>
+<label for ="idp">ID proizvoda: </label> <input type="text" id="idp"/>
+<br><br>
+<input type="submit"  onclick="izbrisiproizvod()" value="Izbrisi proizvod"/>
+</fieldset>
+</form>
+<form id="izmjena">
+<fieldset>
+<legend>Izmijeni proizvoda</legend>
+<label for ="idpb">ID proizvoda: </label> <input type="text" id="idpb"/>
+<label for ="nazivb">Naziv: </label> <input  type="text"  name="nazivb" id="nazivb"/> 
+<label for ="opisb">Opis: </label> <input  type="text"  name="opisb" id="opisb" /> 
+<label for ="pslikab">Slika: </label> <input type="text" id="pslikab"/>
+<br><br>
+<input type="submit"  onclick="izmjeniproizvod()" value="Izmijeni proizvod"/>
+</fieldset>
+</form>
+</div>

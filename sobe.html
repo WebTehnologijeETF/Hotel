@@ -3,6 +3,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <link rel="stylesheet" type="text/css" href="stil2.css">
+<script src="javascript.js"></script>
 <TITLE>Double Infinity Hotel</TITLE>
 </HEAD>
 <body>
@@ -18,10 +19,17 @@
 
    <div id="meni">
     <ul>
-    <li><a href="naslovnica.html">Naslovnica</a></li>
-    <li><a href="sobe.html">Sobe</a></li>
-    <li><a href="restoran.html">Restoran </a></li>
-    <li><a href="kontakt.html">Kontakt </a></li>
+    <li><a onclick="otvori('naslovnica.html')">Naslovnica</a></li>
+    <li><a onclick="otvori('sobe.html')">Sobe</a></li>
+   <li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
+          <ul id="submeni" onmouseover="drzisubmeni()" >
+            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
+          <li id="stavka2" onclick="otvori('proizvodi.html')" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Proizvodi </a></li>
+          <li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+        </ul>
+
+    </li>
+    <li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
     </ul>
 
 
@@ -77,7 +85,7 @@
               
 
 </table>
-
+ <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 
 <img class="slikesoba" src="jacuzzi.jpg" alt="Slika" width="20%" height="25%">
 

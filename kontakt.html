@@ -20,10 +20,17 @@
 
    <div id="meni">
     <ul>
-    <li><a href="naslovnica.html">Naslovnica</a></li>
-    <li><a href="sobe.html">Sobe</a></li>
-    <li><a href="restoran.html">Restoran </a></li>
-    <li><a href="kontakt.html">Kontakt </a></li>
+    <li><a onclick="otvori('naslovnica.html')">Naslovnica</a></li>
+    <li><a onclick="otvori('sobe.html')">Sobe</a></li>
+    <li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
+          <ul id="submeni" onmouseover="drzisubmeni()" >
+            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
+          <li id="stavka2" onclick="otvori('proizvodi.html')" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Proizvodi </a></li>
+          <li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+        </ul>
+
+    </li>
+    <li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
     </ul>
 
 
@@ -32,7 +39,7 @@
 
 
     </div>
-<form id="kontakt" action=" " onSubmit="provjeri(); return false">
+<form id="kontakt" action=" " onSubmit="provjeri(); return false; ">
 <fieldset id="okvirforme">
 <legend>Kontaktirajte nas! </legend>
 
@@ -52,18 +59,17 @@
   
 </select>
 
-<label for="gradovi" id="gradovi" >Grad </label>
-<select id="gradovi" >
-  
-  <option value="Sarajevo"  >Sarajevo</option>
-  <option value="Mostar">Mostar</option>
-  <option value="Zenica">Zenica</option>
-  
-</select>
+<label for="grad"  >Grad: </label>
+<input  onchange="provjerigradservis2()"   type="text" id="grad" name="grad" size="55">
+<img id="error5" src="error5.png" />
+
+<label for="pbroj">Poštanski broj:</label><input onchange="provjerigradservis()" type="text" id="pbroj" name="pbroj" size="55">
+
 
 <label for="poruka">Poruka: </label> <input  onchange="provjeriporuku()"  type="text" id="poruka" name="poruka" size="55" placeholder="Upišite vašu poruku" required />
 <img id= "error4" src="error5.png" />
-<input type="submit" value="Posalji!" id="posalji" size="51" onSubmit="provjeri()"/>
+<input type="submit" value="Posalji!" id="posalji" size="51" />
+
 <p id="greska">Ovdje će biti poruka o grešci! </p>
 </fieldset> 
 </form>
