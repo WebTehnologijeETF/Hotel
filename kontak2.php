@@ -2,7 +2,7 @@
 <html>
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<script src="javascript.js"></script>
 
 <link rel="stylesheet" type="text/css" href="stil2.css">
 <TITLE>Double Infinity Hotel</TITLE>
@@ -24,11 +24,12 @@
 
 
 
+
    <div id="meni">
-		<ul>
-		<li><a onclick="otvori('index.html')">Naslovnica</a></li>
-		<li><a onclick="otvori('sobe.html')">Sobe</a></li>
-		<li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
+    <ul>
+    <li><a onclick="otvori('index.html')">Naslovnica</a></li>
+    <li><a onclick="otvori('sobe.html')">Sobe</a></li>
+    <li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
           <ul id="submeni" onmouseover="drzisubmeni()" >
             <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
           <li id="stavka2" onclick="otvori('proizvodi.html')" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Proizvodi </a></li>
@@ -36,8 +37,8 @@
         </ul>
 
     </li>
-		<li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
-		</ul>
+    <li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
+    </ul>
 
 <br><br><br>
 

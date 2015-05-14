@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
  if (($_POST["grad"])!="")
  {
-$grad=$_POST["grad"];
+$grad=jeliprazno($_POST["grad"]);
 
  }
   
@@ -55,7 +55,7 @@ if (($_POST["email"])=="")
    }
 
  
- 	
+  
 $drzava=($_POST["drzave"]);
  if (!in_array($drzava, $validnedrzave)){
  $validno=false;
@@ -66,7 +66,7 @@ $drzava=($_POST["drzave"]);
  { 
   $telefon=$_POST["telefon"] ;
   if (!preg_match("/^[0-9]{2}[1-9][-]?[0-9]{3}[-]?[0-9]{3}$/",$telefon))
-  	{$telefone="Telefon može sadrzavati samo brojeve!";
+    {$telefone="Telefon može sadrzavati samo brojeve!";
      $validno=false;
     }
 
@@ -74,7 +74,7 @@ $drzava=($_POST["drzave"]);
 
  if(($_POST["pbroj"])!="")
  {
- 	
+  
  $postanskibroj=($_POST["pbroj"]);
  if(!preg_match("/^[0-9]{5}$/", $postanskibroj))
  {
@@ -87,6 +87,7 @@ $drzava=($_POST["drzave"]);
 function jeliprazno($data)
 {
   $data = trim($data);
+  $data=htmlentities($data);
   return $data;
 
 }

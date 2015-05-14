@@ -114,6 +114,11 @@ margin-left:40%;
 
 }
 
+.proba 
+{
+  color:red;
+}
+
 .sn{
 
 height:32%;
@@ -243,13 +248,41 @@ color:#FFD280;
 
 }
 
+#errornovi
+{
+  width:6%;
+  height:6%;
+  margin-left: 94%;
+  visibility: hidden;
+
+}
+
+#reset
+{
+
+width:70px;
+margin-left: 74%;
+
+}
+
+.potvrda {
+font-weight: bold;
+font-size: 16px;
+color:black;
+background: white;
+width:30%;
+text-align: left;
+margin-left:33%;
+padding: 4%;
+}
+
 #kontakt {
 background-color: #ECE3DA;
 width:420px;
 
 margin-top: 5%;
 color: #FF8C00 ;
-margin-left:50%;
+margin-left:35%;
 padding-left: 20px;
 padding-top:10px;
 padding-bottom: 12px;
@@ -479,6 +512,18 @@ margin-bottom: -2%;
 
 }
 
+#error22{
+width:6%; 
+height:6%;
+
+margin-left:93%;
+visibility: visible;
+
+
+
+
+}
+
 
 #error2 {
 width:6%; 
@@ -523,6 +568,12 @@ width:6%;
 height:6%;
 visibility: hidden;
 
+
+}
+#error52{
+width:6%; 
+height:6%;
+visibility: visible;
 
 }
 #greska {
