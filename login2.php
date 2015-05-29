@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="stil2.css">
 <?php
 
 function jeliprazno($data)
@@ -7,6 +8,7 @@ function jeliprazno($data)
   return $data;
 
 }
+$greska="";
 
 session_start();
 if(isset($_POST['ulogujse']) ){
@@ -16,11 +18,11 @@ if(isset($_POST['ulogujse']) ){
 	//admin unosi sifru ispravnu
 if(!isset($_SESSION['username']))
 {
-
+echo "isset" ;
 
 	$username = jeliprazno($_REQUEST['username']);
     $password=jeliprazno($_REQUEST['password']);
-    if(empty($username) || empty($password)) echo "Molim vas unesite i ime i password!";
+    if(empty($username) || empty($password)) $greska="Unesite username i password";  //echo "<p id=\"pogresanlogin\">Unesite username i password!</p>";
     else{
     $veza = new PDO("mysql:dbname=doubleinfinityhotel;host=localhost;charset=utf8", "zana", "1ZanA1");
      $veza->exec("set names utf8");
@@ -33,13 +35,14 @@ if ($broj==1)
 	$_SESSION['username']=$username;
 	$_SESSION['password']=$password;
 
-      echo "logovani ste kao ".$_SESSION['username'];
+      $greska="logovani ste kao ".$_SESSION['username'];
        header('Location: adminpanel.php');
   }
 
-else echo "Unijeli ste neispravnu sifru!";
+else $greska="Unijeli ste nesipravnu šifru!";
+
   } }
-     // session_unset();
+    
 } 
  ?>
 

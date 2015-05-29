@@ -154,6 +154,8 @@ unset($_GET['novosti']);
   </body>
 </html>
 <br><br>
+<?php echo  "<p id=\"pogresanlogin\">$greska</p>?>" ?>
+
 <footer><p> 2015 Double infinity Hotel-All rights reserved.</p>
     <form id="admin" action="index.php" method="POST" >
      Admin:
