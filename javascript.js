@@ -675,7 +675,7 @@ n = n.join("");
            obj[i].tekst+" </p><br><small class=\"smalkoment\" > Objavio/la :"+
            obj[i].autor+"</small><small class=\"smalkoment\">&nbsp;&nbsp;&nbsp;"+
            obj[i].email+"</small><br><small class=\"smalkoment\" > "+
-            obj[i].vrijeme2+" </small><br><hr id=\"hrkoment\"></div><br><br>";
+            obj[i].vrijeme+" </small><br><hr id=\"hrkoment\"></div><br><br>";
              
             
 
@@ -744,8 +744,8 @@ return false;
 function napravikomentar()
 { 
 
-  var id=tekst=autor=email="";
-   var id=document.getElementById("idk").value;
+  var novost=tekst=autor=email="";
+   var novost=document.getElementById("idk").value;
   var tekst=document.getElementById("tekstk").value;
   var autor=document.getElementById("autork").value;
   var email=document.getElementById("emailk").value;
@@ -754,7 +754,7 @@ function napravikomentar()
    
   ajax.open("POST", "komentarirest.php", true);
   ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  ajax.send("novost="+id+"&tekst=" + tekst + "&autor="+autor+"&email"+email); 
+  ajax.send("novost="+novost+"&tekst=" + tekst + "&autor="+autor+"&email="+email); 
   return false;
 
 
