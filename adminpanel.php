@@ -52,23 +52,8 @@ session_start();
       $userpromijeni= $passpromijeni=$emailpromijeni="";
 
      
-if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['dodajnovost'])))
- {
-   
-   
-    $naslov=jeliprazno($_POST["naslov"]);
-  $tekst=jeliprazno($_POST["tekst"]);
-  $autor=jeliprazno($_POST["autor"]);
-  $slika=jeliprazno($_POST["slika"]);
 
-
-$unos = $veza->prepare("INSERT INTO novosti SET naslov=?, tekst=?, autor=?, slika=? ");
-$unos->execute(array($naslov,$tekst,$autor,$slika));
-
-
-
- }
-if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['prikazinovost'])))
+/*if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['prikazinovost'])))
  {
     
    $naslovp=jeliprazno($_POST["naslov"]);
@@ -93,39 +78,9 @@ foreach ($unos as $n)
 
 
 
- }
-if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['promijeninovost'])))
- {
-   $idpromijeni=jeliprazno($_POST['pomocna']);
-  
-   $naslovp=jeliprazno($_POST['naslov']);
-   $tekstp=jeliprazno($_POST['tekst']);
-   $autorp=jeliprazno($_POST['autor']);
-   $slikap=jeliprazno($_POST['slika']);
-  
-
-$unos = $veza->prepare("UPDATE novosti SET naslov=?, tekst=?, autor=?, slika=? where id=?");
-$unos->execute(array($naslovp,$tekstp,$autorp,$slikap,$idpromijeni));
+ } */
 
 
-
-
-
- }
-
- if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['izbrisinovost'])))
- {
-   $idpromijeni=jeliprazno($_POST['pomocna']);
-   
- 
-
-$unos = $veza->prepare("DELETE FROM novosti where id=?");
-$unos->execute(array($idpromijeni));
-
-
-
-
- }
 
 if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['prikaziadmin'])))
  {
@@ -208,27 +163,30 @@ if ($_SERVER["REQUEST_METHOD"]=="POST" && (isset($_POST['odjavise'])))
 <h5>Novosti</h5>
 <hr>
 
+<p id="polje"></p>
+
+
 <form id="formadodajnovost" action="adminpanel.php" method="POST" >
 
 <legend id="dodavanjelegend">Dodavanje novosti</legend>
 <label for ="naslov"> Naslov:</label>
-<input type="text" name="naslov" ><br><br>
+<input type="text" name="naslov" id="naslovn" ><br><br>
 <label for ="tekst"> Tekst:</label>
-<input type="text" name="tekst" ><br><br>
+<input type="text" name="tekst" id="tekstn"><br><br>
 <label for="autor" > Autor:  </label>
-<input type="text" name="autor" ><br><br>
+<input type="text" name="autor" id="autorn" ><br><br>
 <label for="slika" > Slika:  </label>
-<input type="text" name="slika" ><br><br>
+<input type="text" name="slika" id="slikan" ><br><br>
 <input type="hidden" name="pomocna" value=""?> 
 
-&nbsp;&nbsp;<input type="submit" value="Dodaj novost" name="dodajnovost" id="dodajnovost"></form>
+&nbsp;&nbsp;<input type="button" onclick="dodajnovostx()" value="Dodaj novost" name="dodajnovost" id="dodajnovost"></form>
 
 
 
-<form id="formpn" action="adminpanel.php" method="POST" >
+<form id="formpn" action="adminpanel.php" method="POST"  >
 <legend id="dodavanjelegend">Promjena/brisanje novosti</legend>
 <label for ="naslov" id="izaberinovost"> &nbsp;&nbsp;Izabrite novost:</label>
-<select name="naslov"  >
+<select name="naslov" id="naslov1" >
 <?php
 foreach ($naslovi as $n)
 
@@ -246,20 +204,24 @@ echo  "<option value=\"".$n['naslov']."\">".$n['naslov']."</option>";
   
 ?>
 </select>
-<input type="submit" value="Prikazi novost" name="prikazinovost" id="odjavisebutton"><br><br>
+<input type="button" value="Prikazi novost" onclick="prikazinovostizaizmjenu()" name="prikazinovost" id="odjavisebutton"><br><br>
 <label for ="promijeninaslov"> Naslov:</label>
-<input type="text" name="promijeninaslov" value="<?php echo $naslovpromijeni ?>" ><br><br>
+<input type="text" name="promijeninaslov" id="naslovizb" value="<?php echo $naslovpromijeni ?>" ><br><br>
 <label for ="tekst"> Tekst:</label>
-<input type="text" name="tekst" value="<?php echo $tekstpromijeni ?>" ><br><br>
+<input type="text" name="tekst" id="tekstnp" value="<?php echo $tekstpromijeni ?>" ><br><br>
 <label for="autor" >Autor:  </label>
-<input type="text" name="autor" value="<?php echo $autorpromijeni ?>" ><br><br>
+<input type="text" name="autor" id="autornp" value="<?php echo $autorpromijeni ?>" ><br><br>
 <label for="slika" > Slika:  </label>
-<input type="text" name="slika" value="<?php echo $slikapromijeni ?>"><br><br>
-<input type="hidden" name="pomocna" value="<?php echo $idpromijeni ?>"?>
+<input type="text" name="slika" id="slikanp" value="<?php echo $slikapromijeni ?>"><br><br>
+<input type="hidden" name="pomocna" id="pomocnanp" value="<?php echo $idpromijeni ?>"?>
 
-&nbsp;&nbsp;<input type="submit" value="Promijeni novost" name="promijeninovost" id="dodajnovost"><br><br>
-<input type="submit" value="Izbrisi novost" name="izbrisinovost" id="dodajnovost">
+&nbsp;&nbsp;<br><br>
+<input type="button" onclick="promijeninovostx()" value="Promijeni novost" name="promijeninovost" id="dodajnovost">
+<input type="button" onclick="izbrisinovostx('<?php echo $naslovpromijeni?>')" value="Izbrisi novost" name="izbrisinovost" id="dodajnovost">
 </form>
+
+
+
 
 
 
@@ -269,7 +231,7 @@ echo  "<option value=\"".$n['naslov']."\">".$n['naslov']."</option>";
 <form id="formbrisikomentare" action="adminpanel.php" method="POST" >
 <legend id="dodavanjelegend">Uređivanje komentara</legend>
 <label for="izbornovosti" id="izaberinovost">Izaberite novost:</label>
-<select name="izbornovosti">
+<select name="izbornovosti" id="naslov2">
 <?php
 
 foreach ($naslovi2 as $n)
@@ -284,8 +246,9 @@ echo  "<option value=\"".$n['naslov']."\">".$n['naslov']."</option>";
 }
  ?>
 </select>
-<input type="submit" value="Prikaži komentare" name="prikazikomentare" id="odjavisebutton"><br><br>
+<input type="submit" onclick=dajkomentarenanovosti()   value="Prikaži komentare" name="prikazikomentare" id="odjavisebutton"><br><br>
 </form>
+<div id="newDiv"></div>
 <hr>
 
 
@@ -358,7 +321,7 @@ $unos->execute(array($user,md5($pas),$em));
 </form>
 
 
-<form id="adminforma1" action="adminpanel.php" method="POST">
+<form id="adminforma1" action="novostirest.php" method="DELETE">
 <legend id="dodavanjelegend">Promjena/brisanje administratora</legend>
 <label for="admini" id="izaberinovost">Izaberite adminstratora:</label>
 <select name="admini"  >
@@ -383,7 +346,7 @@ echo  "<option value=\"".$n['username']."\">".$n['username']."</option>";
 <input type="text" name="pass" value="<?php echo $passpromijeni ?>">
 <label for="email">Email:</label>
 <input type="text" name="email" value="<?php echo $emailpromijeni ?>"><br><br>
-<input type="submit" name="promijeniadminbutton" value="Spasi promjene" id="dodajnovost"><br><br>
+<input type=\"hidden\" name=\"pomocna\" value="" />"
 <input type="submit" name="izbrisiadminbutton" value="Izbrisi administratora" id="dodajnovost">
 </form>
 <hr>
