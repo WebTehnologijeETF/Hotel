@@ -78,7 +78,7 @@ function rest_delete($request, $data) {
   $naslovk= jeliprazno($data["naslov"]);
   
   
-     $veza = new PDO("mysql:dbname=doubleinfinityhotel;host=localhost;charset=utf8", "zana", "1ZanA1");
+     $veza = new PDO("mysql:dbname=localhost;host=127.4.148.2;charset=utf8", "zana", "1ZanA1");
      $veza->exec("set names utf8");
 
     $unoss = $veza->prepare("SELECT * FROM novosti where naslov=?");
@@ -97,7 +97,7 @@ $unos->execute(array($idn));
 
 }
 function rest_put($request, $data) {
-     $veza = new PDO("mysql:dbname=doubleinfinityhotel;host=localhost;charset=utf8", "zana", "1ZanA1");
+     $veza = new PDO("mysql:dbname=localhost;host=127.4.148.2;charset=utf8", "zana", "1ZanA1");
      $veza->exec("set names utf8");
 
     $idpromijeni=jeliprazno($data['pomocna']);

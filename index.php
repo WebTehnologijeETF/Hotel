@@ -29,9 +29,8 @@
 		<li><a onclick="otvori('sobe.html')">Sobe</a></li>
 		<li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
           <ul id="submeni" onmouseover="drzisubmeni()" >
-            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
-        	<li id="stavka2" onclick="otvori('proizvodi.html')" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Proizvodi </a></li>
-        	<li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">O restoranu</a></li>
+        	
         </ul>
 
 		</li>
@@ -42,11 +41,11 @@
    </div>
   
    <div id="dobrodosli">
-   <img class="sn" src="hoteloutside.jpg" alt="Slika"  >
-   <img class="sn" src="luster.jpg" alt="Slika" height="32%" width="24%">
-   <img class="sn" src="stolicepozadina.jpg" alt="Slika" height="32%" width="24%">
+   <img class="sn" id="slika1" src="hoteloutside.jpg" alt="Slika"  >
+   <img class="sn" id="slika2" src="luster.jpg" alt="Slika" height="32%" width="24%">
+   <img class="sn" id="slika3" src="stolicepozadina.jpg" alt="Slika" height="32%" width="24%">
    
-   <img class="sn" src="gardenr.jpeg" alt="Slika" height="32%" width="24%" >
+   <img class="sn" id="slika4" src="gardenr.jpeg" alt="Slika" height="32%" width="24%" >
 
 
    </div>

@@ -22,16 +22,15 @@
     <li><a onclick="otvori('sobe.html')">Sobe</a></li>
     <li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
           <ul id="submeni" onmouseover="drzisubmeni()" >
-            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
-          <li id="stavka2" onclick="otvori('proizvodi.html')" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Proizvodi </a></li>
-          <li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">O restoranu</a></li>
+         
         </ul>
 
     </li>
     <li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
     </ul>
 </div>
-   
+   <div><br><br><br></div>
 <div id="restoran">
   
    <img class="rs" src="restoran2.jpg" alt="Slika" width="20%" height="32%" >
@@ -41,19 +40,29 @@
    
    </div>
 <div id="opisrestorana">
-  <p>Spoj elegancije, luksuza i jednostavnosti.U ovom prekrasnom ambijentu uživajte uz ukusnu hranu i raznovrsne deserte.Izaberite ono što je baš po Vašem ukusu.Odmah uz restoran se nalazi i šarmantni bar, sa svojim mnogobrojnim  specijalitetima.Uz sve to, pogled na vrt s bazenom će vas osvojiti.Uvjerite se sami! </p>
+	<p>Spoj elegancije, luksuza i jednostavnosti.U ovom prekrasnom ambijentu uživajte uz ukusnu hranu i raznovrsne deserte.Izaberite ono što je baš po Vašem ukusu.Odmah uz restoran se nalazi i šarmantni bar, sa svojim mnogobrojnim  specijalitetima.Uz sve to, pogled na vrt s bazenom će vas osvojiti.Uvjerite se sami! </p>
 
 </div>
 
 <div id="stranice"><p>Naša svakodnevna dešavanja,  fotografije,te utiske ljudi možete pratiti putem:  </p>
      
     <ul id="partneri">
-      <li><a href="http://Facebook.com">Facebook</a></li>
-      <li><a href="http://Twitter.com">Twitter</a></li>
-      <li><a href="http://Klix.ba">Klix</a></li>
+    	<li><a href="http://Facebook.com">Facebook</a></li>
+    	<li><a href="http://Twitter.com">Twitter</a></li>
+    	<li><a href="http://Klix.ba">Klix</a></li>
 
 
     </ul>
 </div>
-   </body>
+  
+   <br><br><br><br><br>
+    </body>
+   <footer><p> 2015 Double infinity Hotel-All rights reserved.</p>
+    <form id="admin" action="index.php" method="POST" >
+     Admin:
+<input type="text" name="username" >
+ Sifra:
+<input type="text" name="password" >
+<input type="submit" name="ulogujse" value="Prijavi se">
+</footer> 
    </html>

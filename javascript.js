@@ -594,6 +594,7 @@ return false;
 
 function ucitajnovosti()
 {
+  
 var ajax = new XMLHttpRequest();
 
   ajax.onreadystatechange=function(){
@@ -855,7 +856,7 @@ var ajax = new XMLHttpRequest();
    
     if(ajax.readyState == 4 && ajax.status == 200) 
     { 
-      alert("if"); 
+      
    //document.getElementById("polje").innerHTML = ajax.responseText;
  var obj = JSON.parse(ajax.responseText).komentari; 
 //alert(obj.length);
@@ -881,3 +882,4 @@ if (ajax.readyState == 4 && ajax.status == 404)
   
   return false;
 }
+

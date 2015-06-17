@@ -35,11 +35,11 @@ print "{ \"komentari\": " . json_encode($upit->fetchAll()) . "}";
 function rest_post($request, $data) {
 
  
-  $id=$data["novost"];
+  $id=jeliprazno($data["novost"]);
 
-  $tekst=$data["tekst"];
-  $autor=$data["autor"];
-  $email=$data["email"];
+  $tekst=jeliprazno($data["tekst"]);
+  $autor=jeliprazno($data["autor"]);
+  $email=jeliprazno($data["email"]);
 
 $veza = new PDO("mysql:dbname=doubleinfinityhotel;host=localhost;charset=utf8", "zana", "1ZanA1");
 $veza->exec("set names utf8");

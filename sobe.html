@@ -18,24 +18,23 @@
 </div>
 
    <div id="meni">
-    <ul>
-    <li><a onclick="otvori('index.php')">Naslovnica</a></li>
-    <li><a onclick="otvori('sobe.html')">Sobe</a></li>
+		<ul>
+		<li><a onclick="otvori('index.php')">Naslovnica</a></li>
+		<li><a onclick="otvori('sobe.html')">Sobe</a></li>
    <li><a onclick="otvorisubmeni('submeni')" onmouseout="zatvorielement()"  >Restoran</a>
           <ul id="submeni" onmouseover="drzisubmeni()" >
-            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">Specijalne ponude</a></li>
-          <li id="stavka2" onclick="otvori('proizvodi.html')" onmouseover="promijenipozadinu('stavka2', '#380000')" onmouseout="vratibojupozadine('stavka2', 'black')" ><a href="#">Proizvodi </a></li>
-          <li id="stavka3" onmouseover="promijenipozadinu('stavka3', '#380000')" onmouseout="vratibojupozadine('stavka3', 'black')"><a href="#">Radno vrijeme </a></li>
+            <li id="stavka1"  onclick="otvori('restoran.html')"   onmouseover="promijenipozadinu('stavka1', '#380000')" onmouseout="vratibojupozadine('stavka1', 'black')"><a href="#">O restoranu</a></li>
+          
         </ul>
 
     </li>
-    <li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
-    </ul>
+		<li><a onclick="otvori('kontakt.html')">Kontakt </a></li>
+		</ul>
 
 
    </div>
 
-   <p>Hotel nudi široki asortiman soba, tačnije 6 tipova čije su elementarne karakteristike prikazane u tabeli: </p>
+   <p><br><br><br>Hotel nudi široki asortiman soba, tačnije 6 tipova čije su elementarne karakteristike prikazane u tabeli: </p>
    <table class="tabela">
   
     
@@ -67,34 +66,44 @@
            <td>500</td>
             </tr>
             <tr>
-              <td>Infinity IV</td>
-              <td>"Family"</td>
-              <td>3</td>
-              <td>Jedan bračni krevet i dva odvojena kreveta.(Moguća kombinacija i tri odvojena kreveta). </td>
-              <td>Ovaj luksuzni apartman posjeduje dvije sobe, trpezariju i kuhinju, kao i dva kupatila.Oba kupatila imaju jacuzzi i pristup sauni.</td>
-              <td>600 </td>
-              </tr>
-              <tr>
-              <td>Infinity V</td>
-              <td>"Interconnected"</td>
-              <td>4</td>
-              <td>4 odvojena kreveta (moguća kombinacija sa bračnim krevetom)</td>
-              <td>Bogati apartman, koji posjeduje povezane prostorije ali i zasebne ulaze u svaku prostoriju.Ono što ovaj apartman čini neodoljivim je pogled na bazen i vrt. </td>
-              <td>800  </td>
-              </tr>
-              
+            	<td>Infinity IV</td>
+            	<td>"Family"</td>
+            	<td>3</td>
+            	<td>Jedan bračni krevet i dva odvojena kreveta.(Moguća kombinacija i tri odvojena kreveta). </td>
+            	<td>Ovaj luksuzni apartman posjeduje dvije sobe, trpezariju i kuhinju, kao i dva kupatila.Oba kupatila imaju jacuzzi i pristup sauni.</td>
+            	<td>600 </td>
+            	</tr>
+            	<tr>
+            	<td>Infinity V</td>
+            	<td>"Interconnected"</td>
+            	<td>4</td>
+            	<td>4 odvojena kreveta (moguća kombinacija sa bračnim krevetom)</td>
+            	<td>Bogati apartman, koji posjeduje povezane prostorije ali i zasebne ulaze u svaku prostoriju.Ono što ovaj apartman čini neodoljivim je pogled na bazen i vrt. </td>
+            	<td>800  </td>
+            	</tr>
+            	
 
 </table>
- <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+ <div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 
 <img class="slikesoba" src="jacuzzi.jpg" alt="Slika" width="20%" height="25%">
 
 <img class="slikesoba "src="hotelsobaa.jpg" alt="Slika" width="20%" height="25%"> 
 
-  
+  <br><br><br><br><br><br>
 
 
 
 
 </body>
+<br><br><br><br><br><br>
+
+<footer><p> 2015 Double infinity Hotel-All rights reserved.</p>
+    <form id="admin" action="index.php" method="POST" >
+     Admin:
+<input type="text" name="username" >
+ Sifra:
+<input type="text" name="password" >
+<input type="submit" name="ulogujse" value="Prijavi se">
+</footer> 
 </html>
